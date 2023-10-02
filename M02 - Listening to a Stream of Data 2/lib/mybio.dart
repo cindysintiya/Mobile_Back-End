@@ -40,7 +40,6 @@ class _MyBioState extends State<MyBio> {
 
   Future<void> _setImage(String? value) async {
     prefs = await SharedPreferences.getInstance();
-    print(value);
     if (value != null) {
       setState(() {
         prefs.setString(_keyImage, value);
