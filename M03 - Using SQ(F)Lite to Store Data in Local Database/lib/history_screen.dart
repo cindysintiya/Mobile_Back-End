@@ -40,7 +40,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
             title: Text("${data.name} (\$ ${data.harga})", style: const TextStyle(fontWeight: FontWeight.bold),),
             subtitle: Text('Deleted on  ${DateFormat('hh/MM/yyyy  HH:mm').format(DateTime.parse(data.datetime))}'),
             leading: CircleAvatar(
-              child: Text(data.sum.toString()),
+              child: Text('#${data.id}'),
             ),
           );
         }
@@ -48,6 +48,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
     );
   }
 
+  // error while closing history page; still confusing
   // @override
   // void dispose() {
   //   _dbHelper.closeDb();

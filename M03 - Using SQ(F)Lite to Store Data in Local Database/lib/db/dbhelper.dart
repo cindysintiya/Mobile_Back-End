@@ -8,7 +8,7 @@ class DBHelper {
   final String _tableName = "shopping_list";
   final String _history = "history_list";
   final String _dbName = "shoppinglist_database.db";
-  final int _dbVersion = 2;
+  final int _dbVersion = 2;  // before = 1; updated when adding new columns for challenge
 
   DBHelper() {
     _openDB();
@@ -16,6 +16,7 @@ class DBHelper {
 
   Future<void> _openDB() async {
     // penghapusan database digunakan ketika sdh membuat database namun ternyata terjadi perubahan pd tabel 
+    // tdk disarankan krn akan menghapus data yang sudah tersimpan di database
     // await deleteDatabase(
     //   join(await getDatabasesPath(), _dbName)
     // );
@@ -26,7 +27,7 @@ class DBHelper {
         await db.execute("CREATE TABLE $_tableName (id INTEGER PRIMARY KEY, name TEXT, sum INTEGER)");
         await db.execute("CREATE TABLE $_history (id INTEGER PRIMARY KEY, name TEXT, sum INTEGER, datetime TEXT)");
       }, 
-      onUpgrade: (db, oldVersion, newVersion) async {
+      onUpgrade: (db, oldVersion, newVersion) async {  // recommended for updating database; remember to update the version too
         if (_dbVersion > oldVersion) {
           await db.execute("ALTER TABLE $_tableName ADD harga FLOAT DEFAULT 0");
           await db.execute("ALTER TABLE $_history ADD harga FLOAT DEFAULT 0");
