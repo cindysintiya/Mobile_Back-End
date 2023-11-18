@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "945939879070",
+    "project_id": "flutter-1-12480",
+    "storage_bucket": "flutter-1-12480.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:945939879070:android:21baba86fd353637f3978f",
+        "android_client_info": {
+          "package_name": "com.example.case_study_latihan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYZETXFnN17JGZcpHHZA2qc-NBvgCTNEE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
