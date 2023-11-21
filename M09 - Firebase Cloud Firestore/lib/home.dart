@@ -1,10 +1,11 @@
-import 'dart:convert';
 import 'dart:math';
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fab_circular_menu/fab_circular_menu.dart';
 import 'package:case_study_latihan/event_model.dart';
+import 'package:case_study_latihan/home_exercise.dart';
 
 class MyHome extends StatefulWidget {
   const MyHome({super.key});
@@ -74,7 +75,19 @@ class _MyHomeState extends State<MyHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Cloud Firestore"),),
+      appBar: AppBar(
+        title: const Text("Cloud Firestore"),
+        actions: [
+          TextButton.icon(
+            onPressed: () {
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeExercise()));
+            }, 
+            icon: const Icon(Icons.swipe_right_rounded),
+            label: const Text('Exercise'),
+          ),
+          const SizedBox(width: 10,)
+        ],
+      ),
       body: ListView.builder(
         itemCount: details.isNotEmpty? details.length : 0,
         itemBuilder: (context, position) {
