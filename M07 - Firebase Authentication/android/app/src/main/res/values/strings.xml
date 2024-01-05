@@ -1,4 +1,4 @@
 <resources>
-    <string name="facebook_app_id">716094133262386</string>
-    <string name="facebook_client_token">466d6a84db31ea53b7477014042b8ae5</string>
+    <string name="facebook_app_id">replace with your own app id</string>
+    <string name="facebook_client_token">replace with your client token</string>
 </resources>
